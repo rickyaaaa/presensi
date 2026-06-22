@@ -59,6 +59,27 @@ class PresensiController extends Controller
             ], 404);
         }
 
+        // Validasi geofence
+        $jarakMeter = $this->hitungJarak(
+            $jadwal->kantor->latitude,
+            $jadwal->kantor->longitude,
+            $request->latitude,
+            $request->longitude
+        );
+
+        $radiusKantor = $jadwal->kantor->radius ?? 100; // default 100 meter jika radius null
+
+        if ($jarakMeter > $radiusKantor) {
+            return response()->json([
+                'success' => false,
+                'message' => "Anda berada di luar area kantor. Jarak Anda: " . round($jarakMeter) . " meter, radius yang diizinkan: {$radiusKantor} meter.",
+                'data' => [
+                    'jarak_meter' => round($jarakMeter),
+                    'radius_izin' => $radiusKantor,
+                ],
+            ], 422);
+        }
+
         $today = Carbon::today()->toDateString();
 
         if ($request->status === 'masuk') {
@@ -147,5 +168,16 @@ class PresensiController extends Controller
                 ],
             ], 200);
         }
+    }
+
+    private function hitungJarak(float $lat1, float $lon1, float $lat2, float $lon2): float
+    {
+        $earthRadius = 6371000; // meter
+        $dLat = deg2rad($lat2 - $lat1);
+        $dLon = deg2rad($lon2 - $lon1);
+        $a = sin($dLat / 2) ** 2 +
+             cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dLon / 2) ** 2;
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+        return $earthRadius * $c;
     }
 }

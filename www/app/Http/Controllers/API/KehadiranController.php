@@ -20,7 +20,7 @@ class KehadiranController extends Controller
 
         $KehadiranHarian = KehadiranModel::select('start_time', 'end_time')
                                 ->where('user_id', $userId)
-                                ->whereDate('start_time', $today)
+                                ->whereDate('created_at', $today)
                                 ->first();
         $KehadiranBulanan = KehadiranModel::select('start_time','end_time', 'created_at')
                                 ->where('user_id', $userId)

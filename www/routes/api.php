@@ -20,7 +20,7 @@ use App\Http\Controllers\API\PresensiController;
 Route::prefix('v1')->group(function () {
     
     // Public routes
-    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:5,1');
 
     // Protected routes
     Route::group(['middleware' => ['auth:sanctum']], function () {
@@ -32,10 +32,13 @@ Route::prefix('v1')->group(function () {
         Route::get('/cuti', [CutiController::class, 'index'])->name('api.v1.cuti.index');
         Route::post('/cuti', [CutiController::class, 'store'])->name('api.v1.cuti.store');
 
+        // Auth logout
+        Route::post('/logout', [AuthController::class, 'logout'])->name('api.v1.logout');
+
         // Other existing endpoints (Versioned)
-        Route::get('/get-kehadiran-harian', [KehadiranController::class, 'getKehadiranHarian'])->name('api.v1.get_Kehadiran_Harian');
+        // Route::get('/get-kehadiran-harian', [KehadiranController::class, 'getKehadiranHarian'])->name('api.v1.get_Kehadiran_Harian');
         Route::get('/get-jadwal', [KehadiranController::class, 'getJadwal'])->name('api.v1.get_jadwal');
-        Route::post('/store-kehadiran', [KehadiranController::class, 'store'])->name('api.v1.store_kehadiran');
+        // Route::post('/store-kehadiran', [KehadiranController::class, 'store'])->name('api.v1.store_kehadiran');
         Route::get('/get-kehadiran-bulanan-tahunan/{month}/{year}', [KehadiranController::class, 'getKehadiranBulananTahunan'])->name('api.v1.get_Kehadiran_Bulanan_Tahunan');
         Route::get('/get-image', [KehadiranController::class, 'getImage'])->name('api.v1.get_image');
 

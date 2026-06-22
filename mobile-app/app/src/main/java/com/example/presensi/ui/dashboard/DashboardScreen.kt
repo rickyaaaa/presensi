@@ -26,6 +26,10 @@ import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import org.json.JSONObject
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import com.example.presensi.data.model.KehadiranItem
+import java.util.Calendar
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -52,6 +56,34 @@ fun DashboardScreen(onLogout: () -> Unit) {
     var alertTitle by remember { mutableStateOf("") }
     var alertMessage by remember { mutableStateOf("") }
     var showAlert by remember { mutableStateOf(false) }
+
+    var monthlyPresenceList by remember { mutableStateOf<List<KehadiranItem>>(emptyList()) }
+    val calendar = remember { Calendar.getInstance() }
+    val currentMonth = calendar.get(Calendar.MONTH) + 1
+    val currentYear = calendar.get(Calendar.YEAR)
+
+    fun fetchHistory() {
+        scope.launch {
+            try {
+                val token = authManager.getToken()
+                if (token != null) {
+                    val response = ApiService.create().getKehadiranBulanan("Bearer $token", currentMonth, currentYear)
+                    if (response.isSuccessful) {
+                        val body = response.body()
+                        if (body != null && body.success) {
+                            monthlyPresenceList = body.data ?: emptyList()
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                // Ignore
+            }
+        }
+    }
+
+    LaunchedEffect(Unit) {
+        fetchHistory()
+    }
 
     // Request permissions launcher
     val permissionsLauncher = rememberLauncherForActivityResult(
@@ -89,6 +121,9 @@ fun DashboardScreen(onLogout: () -> Unit) {
                             alertTitle = title
                             alertMessage = message
                             showAlert = true
+                            if (title == "Absensi Sukses") {
+                                fetchHistory()
+                            }
                         }
                     )
                 }
@@ -204,13 +239,99 @@ fun DashboardScreen(onLogout: () -> Unit) {
                     Spacer(modifier = Modifier.height(32.dp))
                     CircularProgressIndicator()
                 }
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                Text(
+                    text = "Riwayat Kehadiran Bulan Ini",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier
+                        .align(Alignment.Start)
+                        .padding(bottom = 8.dp)
+                )
+
+                if (monthlyPresenceList.isEmpty()) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .weight(1f),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "Belum ada riwayat kehadiran bulan ini.",
+                            fontSize = 14.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                } else {
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .weight(1f),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                        contentPadding = PaddingValues(bottom = 80.dp)
+                    ) {
+                        items(monthlyPresenceList) { item ->
+                            Card(
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = CardDefaults.cardColors(
+                                    containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
+                                )
+                            ) {
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(16.dp),
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Column {
+                                        Text(
+                                            text = formatCreatedAtDate(item.createdAt),
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontSize = 15.sp,
+                                            color = MaterialTheme.colorScheme.onSurface
+                                        )
+                                    }
+                                    Column(horizontalAlignment = Alignment.End) {
+                                        Text(
+                                            text = "Masuk: ${item.startTime ?: "-"}",
+                                            fontSize = 13.sp,
+                                            color = MaterialTheme.colorScheme.primary,
+                                            fontWeight = FontWeight.Medium
+                                        )
+                                        Text(
+                                            text = "Pulang: ${item.endTime ?: "-"}",
+                                            fontSize = 13.sp,
+                                            color = MaterialTheme.colorScheme.secondary,
+                                            fontWeight = FontWeight.Medium
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             // Logout Button at the bottom
             Button(
                 onClick = {
-                    authManager.clear()
-                    onLogout()
+                    scope.launch {
+                        try {
+                            val token = authManager.getToken()
+                            if (token != null) {
+                                ApiService.create().logout("Bearer $token")
+                            }
+                        } catch (e: Exception) {
+                            // Tetap logout meski API call gagal
+                        } finally {
+                            authManager.clear()
+                            onLogout()
+                        }
+                    }
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -261,7 +382,7 @@ private fun triggerPresenceFlow(
                 onLocationAcquired(location.latitude, location.longitude)
             }
         } else {
-            onLocationAcquired(0.0, 0.0) // Fallback coordinates
+            onLocationAcquired(-998.0, -998.0) // Fallback coordinates
         }
     }
 }
@@ -275,6 +396,12 @@ private suspend fun uploadPresence(
     onLoading: (Boolean) -> Unit,
     onResult: (String, String) -> Unit
 ) {
+    // Cek GPS gagal (bukan mock, tapi benar-benar tidak dapat sinyal)
+    if (latitude == -998.0 && longitude == -998.0) {
+        onResult("GPS Tidak Tersedia", "Gagal mendapatkan lokasi GPS. Pastikan GPS aktif, izin lokasi diberikan, dan coba lagi di area dengan sinyal GPS yang baik.")
+        return
+    }
+
     if (latitude == -999.0 && longitude == -999.0) {
         onResult("Kecurangan Terdeteksi", "Aplikasi mendeteksi penggunaan Fake GPS / Mock Location. Harap matikan aplikasi GPS tiruan Anda untuk melanjutkan absensi.")
         return
@@ -316,5 +443,16 @@ private suspend fun uploadPresence(
         onResult("Koneksi Error", "Gagal menghubungi server absensi: ${e.localizedMessage ?: "Connection Refused."}")
     } finally {
         onLoading(false)
+    }
+}
+
+private fun formatCreatedAtDate(dateStr: String): String {
+    return try {
+        val parser = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+        val formatter = SimpleDateFormat("EEEE, dd MMM yyyy", Locale("id", "ID"))
+        val date = parser.parse(dateStr)
+        if (date != null) formatter.format(date) else dateStr
+    } catch (e: Exception) {
+        dateStr
     }
 }
