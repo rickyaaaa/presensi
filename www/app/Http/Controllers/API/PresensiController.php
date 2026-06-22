@@ -36,6 +36,13 @@ class PresensiController extends Controller
             ], 422);
         }
 
+        if ((float)$request->latitude === 0.0 && (float)$request->longitude === 0.0) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Koordinat GPS tidak valid (0,0). Pastikan GPS aktif dan coba lagi.',
+            ], 422);
+        }
+
         $user = Auth::user();
 
         // Retrieve user's schedule with office (kantor) and shift info
