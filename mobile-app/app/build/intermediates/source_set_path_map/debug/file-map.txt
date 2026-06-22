@@ -1,0 +1,60 @@
+com.example.presensi.app-jetified-ui-util-release-0 C:\Users\USER\.gradle\caches\8.11.1\transforms\01ff28bb20434aba2be4bf56a0756465\transformed\jetified-ui-util-release\res
+com.example.presensi.app-jetified-material-icons-core-release-1 C:\Users\USER\.gradle\caches\8.11.1\transforms\05d120bef1d71c6583c4c7e5261d24b7\transformed\jetified-material-icons-core-release\res
+com.example.presensi.app-jetified-foundation-release-2 C:\Users\USER\.gradle\caches\8.11.1\transforms\0d08b08c2b2e5089a98ae5eab472ae5c\transformed\jetified-foundation-release\res
+com.example.presensi.app-jetified-lifecycle-runtime-ktx-2.7.0-3 C:\Users\USER\.gradle\caches\8.11.1\transforms\179a1697ed13677d408302680719e03f\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.example.presensi.app-jetified-play-services-base-18.1.0-4 C:\Users\USER\.gradle\caches\8.11.1\transforms\1845bb43d08431427c20a98ee90b9f53\transformed\jetified-play-services-base-18.1.0\res
+com.example.presensi.app-jetified-camera-core-1.3.0-5 C:\Users\USER\.gradle\caches\8.11.1\transforms\1c93d35ce810923ed09e97225c467cfc\transformed\jetified-camera-core-1.3.0\res
+com.example.presensi.app-jetified-runtime-release-6 C:\Users\USER\.gradle\caches\8.11.1\transforms\1ea4116779e0dd5ffdb92405bb8467d1\transformed\jetified-runtime-release\res
+com.example.presensi.app-jetified-foundation-layout-release-7 C:\Users\USER\.gradle\caches\8.11.1\transforms\1f4e3443db2cfae553196f843dab51c8\transformed\jetified-foundation-layout-release\res
+com.example.presensi.app-jetified-annotation-experimental-1.4.0-8 C:\Users\USER\.gradle\caches\8.11.1\transforms\27d256691e640b2b05a65eb9c679fc32\transformed\jetified-annotation-experimental-1.4.0\res
+com.example.presensi.app-lifecycle-livedata-2.7.0-9 C:\Users\USER\.gradle\caches\8.11.1\transforms\2adfdf602b568cbf4129751de18ecbd8\transformed\lifecycle-livedata-2.7.0\res
+com.example.presensi.app-jetified-material-ripple-release-10 C:\Users\USER\.gradle\caches\8.11.1\transforms\2e1bc155e7bec2304c39087ee36fb725\transformed\jetified-material-ripple-release\res
+com.example.presensi.app-jetified-core-ktx-1.12.0-11 C:\Users\USER\.gradle\caches\8.11.1\transforms\3827871c14e695432e443d8ea2326386\transformed\jetified-core-ktx-1.12.0\res
+com.example.presensi.app-jetified-ui-text-release-12 C:\Users\USER\.gradle\caches\8.11.1\transforms\3832535b66b52ad81d63be38eaf521d6\transformed\jetified-ui-text-release\res
+com.example.presensi.app-jetified-savedstate-ktx-1.2.1-13 C:\Users\USER\.gradle\caches\8.11.1\transforms\39f37a71306e29dc68140f233e1dbddd\transformed\jetified-savedstate-ktx-1.2.1\res
+com.example.presensi.app-jetified-activity-compose-1.8.2-14 C:\Users\USER\.gradle\caches\8.11.1\transforms\3bb5ca0828833b9eab07788af5aefda2\transformed\jetified-activity-compose-1.8.2\res
+com.example.presensi.app-jetified-lifecycle-process-2.7.0-15 C:\Users\USER\.gradle\caches\8.11.1\transforms\3bc3687ae17a3d46747c52c251d2ba7f\transformed\jetified-lifecycle-process-2.7.0\res
+com.example.presensi.app-jetified-camera-view-1.3.0-16 C:\Users\USER\.gradle\caches\8.11.1\transforms\3dff36cf4093b36666bc1b829f5cbce0\transformed\jetified-camera-view-1.3.0\res
+com.example.presensi.app-jetified-activity-1.8.2-17 C:\Users\USER\.gradle\caches\8.11.1\transforms\403e0b438e1c509b6428f3fcd64703e4\transformed\jetified-activity-1.8.2\res
+com.example.presensi.app-jetified-ui-unit-release-18 C:\Users\USER\.gradle\caches\8.11.1\transforms\420afabf220914118e57ea30f2d1a861\transformed\jetified-ui-unit-release\res
+com.example.presensi.app-jetified-appcompat-resources-1.1.0-19 C:\Users\USER\.gradle\caches\8.11.1\transforms\45c4bd8591bcc0f9cdf15b4841dbb9f4\transformed\jetified-appcompat-resources-1.1.0\res
+com.example.presensi.app-jetified-camera-lifecycle-1.3.0-20 C:\Users\USER\.gradle\caches\8.11.1\transforms\4bce802327adcae15e3a8258c11ca133\transformed\jetified-camera-lifecycle-1.3.0\res
+com.example.presensi.app-jetified-camera-video-1.3.0-21 C:\Users\USER\.gradle\caches\8.11.1\transforms\4ffc77361b20e822433e3180b72229df\transformed\jetified-camera-video-1.3.0\res
+com.example.presensi.app-jetified-savedstate-1.2.1-22 C:\Users\USER\.gradle\caches\8.11.1\transforms\58b99ff73dc997f306315c246bce4344\transformed\jetified-savedstate-1.2.1\res
+com.example.presensi.app-jetified-lifecycle-viewmodel-compose-2.7.0-23 C:\Users\USER\.gradle\caches\8.11.1\transforms\5b6bdbd3685a045d5c9b7de3269dd28d\transformed\jetified-lifecycle-viewmodel-compose-2.7.0\res
+com.example.presensi.app-jetified-ui-release-24 C:\Users\USER\.gradle\caches\8.11.1\transforms\6139b39027d3a44597c8690f7651dbb3\transformed\jetified-ui-release\res
+com.example.presensi.app-jetified-runtime-saveable-release-25 C:\Users\USER\.gradle\caches\8.11.1\transforms\6f45df1bfaa50094ca61fd450d656e48\transformed\jetified-runtime-saveable-release\res
+com.example.presensi.app-jetified-animation-release-26 C:\Users\USER\.gradle\caches\8.11.1\transforms\71258a479d123648647630b86cbb3ab5\transformed\jetified-animation-release\res
+com.example.presensi.app-jetified-ui-tooling-preview-release-27 C:\Users\USER\.gradle\caches\8.11.1\transforms\730c8e22ebdba3dab6764397db8c813c\transformed\jetified-ui-tooling-preview-release\res
+com.example.presensi.app-jetified-emoji2-1.3.0-28 C:\Users\USER\.gradle\caches\8.11.1\transforms\7c53021a7f0defee2ed89903f19b5847\transformed\jetified-emoji2-1.3.0\res
+com.example.presensi.app-appcompat-1.1.0-29 C:\Users\USER\.gradle\caches\8.11.1\transforms\80c6a2fc26609deb1dde1fdccea5fb67\transformed\appcompat-1.1.0\res
+com.example.presensi.app-lifecycle-livedata-core-2.7.0-30 C:\Users\USER\.gradle\caches\8.11.1\transforms\826aeb0745057fcbc638c2743143020d\transformed\lifecycle-livedata-core-2.7.0\res
+com.example.presensi.app-jetified-material-icons-extended-release-31 C:\Users\USER\.gradle\caches\8.11.1\transforms\8279fc1d89821d7142a8d6664d44f9d2\transformed\jetified-material-icons-extended-release\res
+com.example.presensi.app-jetified-material-release-32 C:\Users\USER\.gradle\caches\8.11.1\transforms\8f0a9f292082ebe2a1e9cf9c90b3f425\transformed\jetified-material-release\res
+com.example.presensi.app-jetified-play-services-basement-18.1.0-33 C:\Users\USER\.gradle\caches\8.11.1\transforms\8fc25572ebad9145d6b2e86d3aa60719\transformed\jetified-play-services-basement-18.1.0\res
+com.example.presensi.app-jetified-lifecycle-runtime-compose-2.7.0-34 C:\Users\USER\.gradle\caches\8.11.1\transforms\9138e8ff0e0cb008c6a70d7388bb039e\transformed\jetified-lifecycle-runtime-compose-2.7.0\res
+com.example.presensi.app-jetified-activity-ktx-1.8.2-35 C:\Users\USER\.gradle\caches\8.11.1\transforms\940cb3e203b0f8a759440a0879c4214a\transformed\jetified-activity-ktx-1.8.2\res
+com.example.presensi.app-jetified-ui-tooling-data-release-36 C:\Users\USER\.gradle\caches\8.11.1\transforms\9448f98be040a072277265da882542e2\transformed\jetified-ui-tooling-data-release\res
+com.example.presensi.app-jetified-ui-geometry-release-37 C:\Users\USER\.gradle\caches\8.11.1\transforms\9a4b804a511a23a3af56fd9cab4cd836\transformed\jetified-ui-geometry-release\res
+com.example.presensi.app-core-1.12.0-38 C:\Users\USER\.gradle\caches\8.11.1\transforms\a9151a4d6ae1bfdd6ee17896c966055a\transformed\core-1.12.0\res
+com.example.presensi.app-jetified-profileinstaller-1.3.0-39 C:\Users\USER\.gradle\caches\8.11.1\transforms\a98db027cb789b18fc5429eedc61b765\transformed\jetified-profileinstaller-1.3.0\res
+com.example.presensi.app-jetified-startup-runtime-1.1.1-40 C:\Users\USER\.gradle\caches\8.11.1\transforms\abaaa76e7297328fccc351818a9e3a13\transformed\jetified-startup-runtime-1.1.1\res
+com.example.presensi.app-jetified-animation-core-release-41 C:\Users\USER\.gradle\caches\8.11.1\transforms\af135089f3753f21ae25e10dd2007485\transformed\jetified-animation-core-release\res
+com.example.presensi.app-jetified-customview-poolingcontainer-1.0.0-42 C:\Users\USER\.gradle\caches\8.11.1\transforms\b1bc92b05eefb88521cfb9f29865ed8e\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.example.presensi.app-core-runtime-2.2.0-43 C:\Users\USER\.gradle\caches\8.11.1\transforms\b20fe29b9cc82875b08e6ba2c044a453\transformed\core-runtime-2.2.0\res
+com.example.presensi.app-lifecycle-viewmodel-2.7.0-44 C:\Users\USER\.gradle\caches\8.11.1\transforms\b8807ccebb4cd745adcd1faa8ebd3979\transformed\lifecycle-viewmodel-2.7.0\res
+com.example.presensi.app-jetified-camera-camera2-1.3.0-45 C:\Users\USER\.gradle\caches\8.11.1\transforms\b9df9dce5772c4d5b7e17580eb08cf88\transformed\jetified-camera-camera2-1.3.0\res
+com.example.presensi.app-jetified-ui-tooling-release-46 C:\Users\USER\.gradle\caches\8.11.1\transforms\be0e57c126405c1add66264d26df63d0\transformed\jetified-ui-tooling-release\res
+com.example.presensi.app-jetified-ui-test-manifest-1.6.1-47 C:\Users\USER\.gradle\caches\8.11.1\transforms\c71977e4b843f3fb84ca795a0191972c\transformed\jetified-ui-test-manifest-1.6.1\res
+com.example.presensi.app-jetified-material3-release-48 C:\Users\USER\.gradle\caches\8.11.1\transforms\c9ff195a5f081b436af79611b2960edb\transformed\jetified-material3-release\res
+com.example.presensi.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-49 C:\Users\USER\.gradle\caches\8.11.1\transforms\e6db6c00e04b2e7da0e9f3130ae64911\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.example.presensi.app-jetified-lifecycle-viewmodel-ktx-2.7.0-50 C:\Users\USER\.gradle\caches\8.11.1\transforms\e9c2d98817e88f8a7062ac59be1bd4a5\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.example.presensi.app-jetified-ui-graphics-release-51 C:\Users\USER\.gradle\caches\8.11.1\transforms\f2e5503e5b9aca3323f75999970ac81c\transformed\jetified-ui-graphics-release\res
+com.example.presensi.app-lifecycle-runtime-2.7.0-52 C:\Users\USER\.gradle\caches\8.11.1\transforms\fac7defbae1e9296dd901b63b7806e23\transformed\lifecycle-runtime-2.7.0\res
+com.example.presensi.app-jetified-lifecycle-livedata-core-ktx-2.7.0-53 C:\Users\USER\.gradle\caches\8.11.1\transforms\fdbe829e9f2c7405dad174ba2b2e3deb\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.example.presensi.app-resValues-54 D:\Work\Joki skripsi\Codingan\Web PrimAbsensi 1.0.0\mobile-app\app\build\generated\res\resValues\debug
+com.example.presensi.app-packageDebugResources-55 D:\Work\Joki skripsi\Codingan\Web PrimAbsensi 1.0.0\mobile-app\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.presensi.app-packageDebugResources-56 D:\Work\Joki skripsi\Codingan\Web PrimAbsensi 1.0.0\mobile-app\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.presensi.app-merged_res-57 D:\Work\Joki skripsi\Codingan\Web PrimAbsensi 1.0.0\mobile-app\app\build\intermediates\merged_res\debug
+com.example.presensi.app-debug-58 D:\Work\Joki skripsi\Codingan\Web PrimAbsensi 1.0.0\mobile-app\app\src\debug\res
+com.example.presensi.app-main-59 D:\Work\Joki skripsi\Codingan\Web PrimAbsensi 1.0.0\mobile-app\app\src\main\res
